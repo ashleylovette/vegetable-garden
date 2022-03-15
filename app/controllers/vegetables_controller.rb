@@ -1,17 +1,24 @@
 class VegetablesController < ApplicationController
-    def show
-        @veg = Vegetable.find(params[:id])
-    end
+  def show
+    @veg = Vegetable.find(params[:id])
+  end
 
-    def index
-        @veggies = Vegetable.all
-    end
+  def index
+    @veggies = Vegetable.all
+  end
 
-    def new
+  def new
+     @veg = Vegetable.new
+  end
 
-    end
+  def create
+    @veg = Vegetable.new(params.require(:vegetable).permit(:name, :season))
 
-    def create
-        
+    if @veg.save
+      redirect_to @veg
+    else
+      render 'new'
     end
+    
+  end
 end
