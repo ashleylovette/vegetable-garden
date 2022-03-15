@@ -1,0 +1,19 @@
+<h1>Vegetables Listing Page</h1>
+
+<table>
+<thead>
+  <tr>    
+    <th>Name</th>
+    <th>Growing Season</th>
+  </tr>
+</thead>
+
+<tbody>
+  <% @veggies.each do |veg| %>
+  <tr>
+    <td> <%= veg.name %></td>
+    <td> <%= veg.season %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
