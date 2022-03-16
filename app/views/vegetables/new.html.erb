@@ -11,3 +11,9 @@
   <br>
   <%= form.submit "Add Vegetable" %>
 <% end %>
+
+ <% if @veg.errors.any? %> 
+  <% @veg.errors.full_messages.each do |message|%>
+  <p><%= message %></p>
+  <% end %>
+<% end %> 
