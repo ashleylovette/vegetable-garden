@@ -13,6 +13,8 @@
   <tr>
     <td> <%= veg.name %></td>
     <td> <%= veg.season %></td>
+    <td><%= link_to 'Delete', vegetable_path(veg), method: :delete %></td>
+    <td><%= link_to 'Show', vegetable_path(veg)%></td>
   </tr>
   <% end %>
 </tbody>
