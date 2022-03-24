@@ -1,19 +1,4 @@
 <h1>Edit Vegetable Details</h1>
 
-<%= form_with(model: @veg, url: vegetable_path) do |form| %>
-  <%= form.label :name, "Vegetable Name:" %>
-  <%= form.text_field :name %> 
-  <br>
-  <br>
-  <%= form.label :season, "Growing Season:" %>
-  <%= form.text_field :season %>
-  <br>
-  <br>
-  <%= form.submit "Add Vegetable" %>
-<% end %>
+<%= render 'form'%>
 
- <% if @veg.errors.any? %> 
-  <% @veg.errors.full_messages.each do |message|%>
-  <p><%= message %></p>
-  <% end %>
-<% end %> 

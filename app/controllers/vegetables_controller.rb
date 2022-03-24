@@ -1,6 +1,8 @@
 class VegetablesController < ApplicationController
+
+  before_action :set_vegetable, only: [:show, :edit, :destroy, :update]
+
   def show
-    @veg = Vegetable.find(params[:id])
   end
 
   def index
@@ -12,7 +14,7 @@ class VegetablesController < ApplicationController
   end
 
   def create
-    @veg = Vegetable.new(params.require(:vegetable).permit(:name, :season))
+    @veg = Vegetable.new(vegetable_params)
 
     if @veg.save
       flash[:notice] = "Vegetable added!"
@@ -23,12 +25,10 @@ class VegetablesController < ApplicationController
   end
 
   def edit
-    @veg = Vegetable.find(params[:id])
   end
 
   def update
-    @veg = Vegetable.find(params[:id])
-    if @veg.update(params.require(:vegetable).permit(:name, :season))
+    if @veg.update(vegetable_params)
       flash[:message] = "Vegetable details updated!"
       redirect_to @veg
     else 
@@ -37,9 +37,18 @@ class VegetablesController < ApplicationController
   end
 
   def destroy
-    @veg = Vegetable.find(params[:id])
     flash[:message] = "#{@veg.name} was successfully deleted!"
     @veg.destroy
     redirect_to vegetables_path
+  end
+
+  private
+
+  def set_vegetable
+    @veg = Vegetable.find(params[:id])
+  end
+
+  def vegetable_params
+    params.require(:vegetable).permit(:name, :season)
   end
 end
