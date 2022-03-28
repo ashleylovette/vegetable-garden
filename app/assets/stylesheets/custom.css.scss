@@ -1,0 +1,37 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+*{
+  overflow-x: hidden;
+}
+
+// NAVBAR
+
+.navbar {
+  background-color: black !important;
+  color: white;
+
+  .search-bar {
+    position: absolute;
+    right: 0;
+    margin: 1em;
+
+  }
+  .search-btn {
+    margin-left: 0.5rem;
+  }
+}
+
+// INDEX
+
+h1 {
+  margin: 1em;
+}
+
+// HOME 
+
+.jumbotron {
+  background-image: asset-url('vg-pic.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

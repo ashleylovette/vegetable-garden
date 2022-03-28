@@ -1,22 +1,22 @@
 <h1>Vegetables Listing Page</h1>
-
-<table>
-<thead>
-  <tr>    
-    <th>Name</th>
-    <th>Growing Season</th>
-  </tr>
-</thead>
-
-<tbody>
-  <% @veggies.each do |veg| %>
-  <tr>
-    <td> <%= veg.name %></td>
-    <td> <%= veg.season %></td>
-    <td><%= link_to 'Delete', vegetable_path(veg), method: :delete %></td>
-    <td><%= link_to 'Show', vegetable_path(veg)%></td>
-  </tr>
-  <% end %>
-</tbody>
+<div class="col-lg-10">
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Vegetable</th>
+      <th scope="col">Growing Season</th>
+      <th scope="col">Growing Condition</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @veggies.each do |veg|%>
+    <tr>
+      <td><%= veg.name %></td>
+      <td><%= veg.season %></td>
+      <td>placeholder</td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
-<%= link_to 'Add Vegetable', new_vegetable_path%>
+<button class="btn btn-outline-success"><%= link_to 'Add Vegetable', new_vegetable_path%></button>
+</div>
