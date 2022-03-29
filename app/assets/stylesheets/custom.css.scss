@@ -30,8 +30,28 @@ h1 {
 // HOME 
 
 .jumbotron {
-  background-image: asset-url('vg-pic.jpg');
+  background-image: asset-url('veggies.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  color: grey;
+  opacity: 0.8;
+  font-weight: 500;
+
+    h1 {
+      font-weight: 500;
+    }
+    
+    p {
+      font-weight: 500;
+      color: black;
+
+    }
 }
+
+header {
+  background-color: gray;
+  height: 32rem;
+  overflow-y: hidden;
+}
+
