@@ -1,0 +1,34 @@
+.jumbotron {
+  background-image: asset-url('veggies2.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  opacity: 0.8;
+  font-weight: 500;
+
+    h1 {
+      font-weight: 500;
+    }
+    
+    p {
+      font-weight: 500;
+    }
+}
+
+header {
+  background-color: gray;
+  height: 32rem;
+  overflow-y: hidden;
+}
+
+.home-btn{
+  margin-top:1rem;
+  color: white;
+  border: 3px solid white;
+
+  &:hover {
+    color: white;
+    transform: translateY(-0.09rem);
+  }
+}

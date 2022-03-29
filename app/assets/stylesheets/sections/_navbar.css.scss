@@ -1,0 +1,25 @@
+
+.navbar {
+  background-color: black;
+  color: white;
+  padding-top:0.5rem;
+
+  .search-bar {
+    position: absolute;
+    right: 0;
+    margin: 1em;
+
+  }
+  .search-btn {
+    margin-left: 0.5rem;
+    color: white;
+    background: darkgreen;
+
+    &:hover {
+      background-color: black;
+      color: white;
+      border: 2px solid darkgreen;
+    }
+
+  }
+}

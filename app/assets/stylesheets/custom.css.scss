@@ -1,57 +1,10 @@
 @import 'bootstrap/dist/css/bootstrap';
 
+// IMPORT OTHER STYLESHEETS
+@use 'sections/navbar.css';
+@use 'sections/index.css';
+@use 'sections/navbar.css';
+
 *{
   overflow-x: hidden;
 }
-
-// NAVBAR
-
-.navbar {
-  background-color: black !important;
-  color: white;
-
-  .search-bar {
-    position: absolute;
-    right: 0;
-    margin: 1em;
-
-  }
-  .search-btn {
-    margin-left: 0.5rem;
-  }
-}
-
-// INDEX
-
-h1 {
-  margin: 1em;
-}
-
-// HOME 
-
-.jumbotron {
-  background-image: asset-url('veggies.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: grey;
-  opacity: 0.8;
-  font-weight: 500;
-
-    h1 {
-      font-weight: 500;
-    }
-    
-    p {
-      font-weight: 500;
-      color: black;
-
-    }
-}
-
-header {
-  background-color: gray;
-  height: 32rem;
-  overflow-y: hidden;
-}
-
