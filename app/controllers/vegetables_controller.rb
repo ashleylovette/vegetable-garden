@@ -15,6 +15,7 @@ class VegetablesController < ApplicationController
 
   def create
     @veg = Vegetable.new(vegetable_params)
+    @veg.user = User.first
 
     if @veg.save
       flash[:notice] = "Vegetable added!"

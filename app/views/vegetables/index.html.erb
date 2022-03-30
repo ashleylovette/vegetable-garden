@@ -6,6 +6,7 @@
       <th scope="col">Vegetable</th>
       <th scope="col">Growing Season</th>
       <th scope="col">Growing Condition</th>
+      <th scope="col">User</th>
     </tr>
   </thead>
   <tbody>
@@ -14,9 +15,9 @@
       <td><%= veg.name %></td>
       <td><%= veg.season %></td>
       <td>placeholder</td>
+      <td><%= veg.user.username if veg.user%></td>
     </tr>
     <% end %>
   </tbody>
 </table>
-<button class="btn btn-outline add-vegetable"><%= link_to 'Add Vegetable', new_vegetable_path%></button>
 </div>

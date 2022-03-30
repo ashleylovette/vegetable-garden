@@ -1,4 +1,4 @@
-<%= form_with(model: @veg, url: vegetable_path) do |form| %>
+<%= form_with(model: @veg, url: new_vegetable_path) do |form| %>
   <%= form.label :name, "Vegetable Name:" %>
   <%= form.text_field :name %> 
   <br>
@@ -7,10 +7,10 @@
   <%= form.text_field :season %>
   <br>
   <br>
-  <%= form.submit "Add Vegetable" %>
+  <%= form.submit "Add Vegetable", class: "btn btn-success add-btn" %>
 <% end %>
 
-<%= link_to 'Cancel and go back to vegetables page', vegetables_path%>
+<%= link_to 'Cancel', vegetables_path, class: "btn btn-outline-success add-btn"%>
 
  <% if @veg.errors.any? %> 
   <% @veg.errors.full_messages.each do |message|%>
