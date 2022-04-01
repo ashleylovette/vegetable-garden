@@ -1,0 +1,13 @@
+ <div class="alrt alert-danger alert-dismissable fade show">
+ <% if obj.errors.any? %> 
+  <ul>
+  <h6>The following errors prevented the <%= obj.class %> from being saved:</h6>
+    <% obj.errors.full_messages.each do |message|%>
+  <li>
+    <%= message %>
+  </li>
+    <% end %>
+ </ul>
+  <% end %>
+ </div>
+  
