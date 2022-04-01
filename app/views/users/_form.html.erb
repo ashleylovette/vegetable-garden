@@ -20,7 +20,7 @@
   
   <br>
   <div class="text-center">
-  <%= form.submit "Sign Up", class: "btn btn-success add-btn" %>
+  <%= form.submit(@user.new_record? ? "Sign Up" : "Update Profile", class: "btn btn-success add-btn") %>
   <% end %>
   <%= link_to 'Cancel', root_path, class: "btn btn-outline-success add-btn"%>
   </div>
