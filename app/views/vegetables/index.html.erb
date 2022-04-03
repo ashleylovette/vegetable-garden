@@ -1,28 +1,2 @@
 <h1>Vegetables Listing Page</h1>
-<div class="col-lg-10">
-<table class="table table-striped table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">Vegetable</th>
-      <th scope="col">Growing Season</th>
-      <th scope="col">Growing Condition</th>
-      <th scope="col">User</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @veggies.each do |veg|%>
-    <tr>
-      <td><%= link_to veg.name.capitalize.pluralize , vegetable_path(veg), class: "link show-link"%></td>
-      <td><%= veg.season.capitalize %></td>
-      <td>placeholder</td>
-      <td><%= veg.user.username if veg.user%></td>
-      <td><%= link_to "Edit", edit_vegetable_path(veg), class: "link edit-link"%></td>
-      <td><%= link_to "Delete", vegetable_path(veg), method: :delete, class: "link delete-link"%></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= link_to "Add New Vegetable", new_vegetable_path, class: "btn btn-outline new-button"%>
-</div>
+<%= render 'vegetable'%>
