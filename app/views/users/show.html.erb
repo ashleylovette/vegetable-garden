@@ -3,5 +3,14 @@
   <%= gravatar_for @user, size: 200 %>
   <h3 class="text-center mt-4">Vegetables</h3>
 
+  <div class="flickr_pagination">
+    <%= will_paginate @veggies, :container => false %>
+  </div>
+
   <%= render 'vegetables/vegetable'%>
+
+  <div class="flickr_pagination">
+    <%= will_paginate @veggies, :container => false %>
+  </div>
+
 </div>

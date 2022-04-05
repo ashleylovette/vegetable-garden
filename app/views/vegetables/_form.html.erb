@@ -3,18 +3,18 @@
   <div class="form-group">
     <%= form.label :name, "Vegetable Name: " %> 
     <%= form.text_field :name, class: "form-input" %>
-</div>  
-<div class="form-group">
-  <%= form.label :season, "Growing Season:" %>
-  <%= form.text_field :season, class: "form-input" %>
-</div>
-<div class="form-group">
-  <%= form.label :conditions, "Growing Conditions:" %> 
-  <%= form.text_area :conditions, class: "form-input" %>
-</div>  
-  <br>
-<div class="text-center">
+  </div>  
+  <div class="form-group">
+    <%= form.label :season, "Growing Season:" %>
+    <%= form.text_field :season, class: "form-input" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :conditions, "Growing Conditions:" %> 
+    <%= form.text_area :conditions, class: "form-input" %>
+  </div>  
+    <br>
+  <div class="text-center">
   <%= form.submit "Add Vegetable", class: "btn btn-success add-btn" %>
-  <%end%>
   <%= link_to 'Cancel', vegetables_path, class: "btn btn-outline-success add-btn"%>
-</div>
+  </div>
+<%end%>

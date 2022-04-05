@@ -6,7 +6,7 @@ class VegetablesController < ApplicationController
   end
 
   def index
-    @veggies = Vegetable.all
+    @veggies = Vegetable.paginate(page: params[:page], per_page: 5)
   end
 
   def new
