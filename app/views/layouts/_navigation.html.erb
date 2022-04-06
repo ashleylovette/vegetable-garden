@@ -9,10 +9,15 @@
         <li class="nav-item">
           <%= link_to "Vegetables", vegetables_path, class:"nav-link"%>
         </li>
-         <li class="nav-item">
-          <%= link_to "Gardeners", users_path, class:"nav-link"%>
+        <li class="nav-item">
+            <%= link_to "Gardeners", users_path, class:"nav-link"%>
         </li>
-
+        <li class="nav-item">
+            <%= link_to "Log In", login_path, class:"nav-link"%>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Log Out", logout_path, class:"nav-link", method: :delete %>
+        </li>
 
         <%# <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
