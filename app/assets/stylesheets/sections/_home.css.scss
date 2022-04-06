@@ -1,5 +1,6 @@
 .jumbotron {
   background-image: asset-url('veggies2.jpg');
+  height: 32rem;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -14,12 +15,6 @@
     p {
       font-weight: 500;
     }
-}
-
-header {
-  background-color: gray;
-  height: 32rem;
-  overflow-y: hidden;
 }
 
 .home-btn{
