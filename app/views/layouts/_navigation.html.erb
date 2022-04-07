@@ -16,11 +16,22 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#"><%= link_to "All Vegetables", vegetables_path, class:"dropdown-item" %></a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#"><%= link_to "Add Vegetable", new_vegetable_path, class:"dropdown-item" %> </a></li>
+            <% if logged_in? %>
+              <li><a class="dropdown-item" href="#"><%= link_to "Add Vegetable", new_vegetable_path, class:"dropdown-item" %> </a></li>
+            <% end %>
             <li><a class="dropdown-item" href="#"><%= link_to "Something Else", vegetables_path, class:"dropdown-item" %></a></li> 
           </ul>
         </li>
         <% if logged_in? %>
+          <li class="nav-item dropdown">
+            <a class= "nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= current_user.username %>
+            </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#"><%= link_to "View Profile", user_path(current_user), class:"dropdown-item" %></a></li>
+            <li><a class="dropdown-item" href="#"><%= link_to "Edit Profile", edit_user_path, class:"dropdown-item" %> </a></li>
+          </ul>
+        </li>
           <li class="nav-item">
             <%= link_to "Log Out", logout_path, class:"nav-link", method: :delete %>
           </li>
