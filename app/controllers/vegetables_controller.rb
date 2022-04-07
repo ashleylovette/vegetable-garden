@@ -56,7 +56,7 @@ class VegetablesController < ApplicationController
   end
 
   def require_same_user
-    if current_user != @veg.user
+    if current_user != @veg.user && !current_user.admin?
       flash[:alert] = "You can only edit your own vegetable"
       redirect_to @veg
     end

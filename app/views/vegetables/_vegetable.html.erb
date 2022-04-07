@@ -6,8 +6,10 @@
       <th scope="col">Growing Season</th>
       <th scope="col">Growing Condition</th>
       <th scope="col">User</th>
-      <%# <th scope="col"></th>
-      <th scope="col"></th> %>
+      <% if current_user.admin? %>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
@@ -17,10 +19,10 @@
       <td><%= veg.season.capitalize %></td>
       <td><%= veg.conditions? ? veg.conditions : "No growing conditions listed" %></td>
       <td><%= veg.user.username if veg.user%></td>
-      <%# <% if logged_in? && veg.user == current_user %> 
-      <%# <td><%= link_to "Edit", edit_vegetable_path(veg), class: "link edit-link"%></td> 
-      <%# <td><%= link_to "Delete", vegetable_path(veg), method: :delete, class: "link delete-link"%></td> 
-      <%# <% end %> 
+      <% if current_user.admin? %>
+       <td><%= link_to "Edit", edit_vegetable_path(veg), class: "link edit-link"%></td> 
+       <td><%= link_to "Delete", vegetable_path(veg), method: :delete, class: "link delete-link"%></td> 
+      <% end %> 
     </tr>
     <% end %>
   </tbody>
