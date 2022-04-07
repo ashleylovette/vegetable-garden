@@ -1,6 +1,8 @@
 class VegetablesController < ApplicationController
 
   before_action :set_vegetable, only: [:show, :edit, :destroy, :update]
+  before_action :require_user, except: [:show, :index]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def show
   end
@@ -51,5 +53,12 @@ class VegetablesController < ApplicationController
 
   def vegetable_params
     params.require(:vegetable).permit(:name, :season)
+  end
+
+  def require_same_user
+    if current_user != @veg.user
+      flash[:alert] = "You can only edit your own vegetable"
+      redirect_to @veg
+    end
   end
 end
