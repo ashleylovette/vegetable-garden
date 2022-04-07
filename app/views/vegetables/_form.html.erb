@@ -2,19 +2,19 @@
 <%= form_with(model: @veg, url: vegetables_path) do |form| %>
   <div class="form-group">
     <%= form.label :name, "Vegetable Name: " %> 
-    <%= form.text_field :name, class: "form-input" %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>  
   <div class="form-group">
     <%= form.label :season, "Growing Season:" %>
-    <%= form.text_field :season, class: "form-input" %>
+    <%= form.text_field :season, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= form.label :conditions, "Growing Conditions:" %> 
-    <%= form.text_area :conditions, class: "form-input" %>
+    <%= form.text_area :conditions, class: "form-control" %>
   </div>  
     <br>
   <div class="text-center">
-  <%= form.submit "Add Vegetable", class: "btn btn-success add-btn" %>
+  <%= form.submit(@veg.new_record? ? "Add Vegetable" : "Update Vegetable", class: "btn btn-success add-btn") %>
   <%= link_to 'Cancel', vegetables_path, class: "btn btn-outline-success add-btn"%>
   </div>
 <%end%>
