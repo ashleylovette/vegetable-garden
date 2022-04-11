@@ -16,7 +16,7 @@ class GardenTypesController < ApplicationController
   end
 
   def index
-
+    @garden_types = GardenType.all
   end
 
   def show
