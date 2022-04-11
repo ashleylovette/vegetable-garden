@@ -1,4 +1,5 @@
 class GardenTypesController < ApplicationController
+  before_action :require_admin, except: [:index, :show]
 
   def new
     @garden_type = GardenType.new
@@ -27,6 +28,13 @@ class GardenTypesController < ApplicationController
 
   def garden_type_params
     params.require(:garden_type).permit(:name)
+  end
+
+  def require_admin
+    if !(logged_in? && current_user.admin?)
+      flash[:alert] = "Only admins can preform this action!"
+      redirect_to garden_types_path
+    end
   end
 
 end

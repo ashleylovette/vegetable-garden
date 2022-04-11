@@ -1,6 +1,13 @@
 require 'test_helper'
 
 class CreateGardenTest < ActionDispatch::IntegrationTest
+  setup do
+    @admin_user = User.create(username: "testadmin", email: "testadmin@admin.com", 
+                              password: "password", admin: true)
+    sign_in_as(@admin_user)
+  end
+
+
   test "get new garden type form and create garden type" do
     get "/garden_types/new"
     assert_response :success
