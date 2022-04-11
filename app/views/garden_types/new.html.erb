@@ -1,0 +1,24 @@
+
+
+<div class="container new-box">
+  <h1 class="text-center mt-4">Create a New Garden Type</h1>
+  
+  <%# Errors template %>
+
+<%= render 'shared/errors', obj: @garden_type %>
+
+  <%# end error template %>
+
+  <%= form_with(model: @garden_type) do |form| %>
+    <div class="form-group pt-3">
+      <%= form.label :name, "Garden Type:" %> 
+      <%= form.text_field :name, class: "form-control", placeholder: "i.e. in ground, raised bed, etc" %>
+    </div> 
+    <br>
+    <div class="text-center">
+      <%= form.submit "Create Garden Type", class: "btn btn-success add-btn"%>
+      <% end %>
+      <%= link_to 'Cancel', vegetables_path, class: "btn btn-outline-success add-btn"%>
+    </div>
+</div>
+

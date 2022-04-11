@@ -15,13 +15,13 @@ class GardenTypesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  # test "should create garden_type" do
-  #   assert_difference('GardenType.count') do
-  #     post garden_types_url, params: { garden_type: {  } }
-  #   end
+  test "should create garden_type" do
+    assert_difference('GardenType.count', 1) do
+      post garden_types_url, params: { garden_type: { name: "Raised bed" } }
+    end
 
-  #   assert_redirected_to garden_type_url(GardenType.last)
-  # end
+    assert_redirected_to garden_type_url(GardenType.last)
+  end
 
   test "should show garden_type" do
     get garden_type_url(@garden_type)
