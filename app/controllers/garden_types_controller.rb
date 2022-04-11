@@ -20,7 +20,7 @@ class GardenTypesController < ApplicationController
   end
 
   def show
-    
+    @garden_type = GardenType.find(params[:id])
   end
 
   private
