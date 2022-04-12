@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_07_214343) do
+ActiveRecord::Schema.define(version: 2022_04_12_185043) do
 
   create_table "garden_types", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,11 @@ ActiveRecord::Schema.define(version: 2022_04_07_214343) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
     t.boolean "admin", default: false
+  end
+
+  create_table "vegetable_garden_types", force: :cascade do |t|
+    t.integer "vegetable_id"
+    t.integer "garden_type_id"
   end
 
   create_table "vegetables", force: :cascade do |t|
