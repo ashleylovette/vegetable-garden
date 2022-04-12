@@ -16,6 +16,7 @@ class VegetablesController < ApplicationController
   end
 
   def create
+    byebug
     @veg = Vegetable.new(vegetable_params)
     @veg.user = current_user
 
@@ -52,7 +53,7 @@ class VegetablesController < ApplicationController
   end
 
   def vegetable_params
-    params.require(:vegetable).permit(:name, :season)
+    params.require(:vegetable).permit(:name, :season, :conditions, garden_type_ids: [])
   end
 
   def require_same_user
