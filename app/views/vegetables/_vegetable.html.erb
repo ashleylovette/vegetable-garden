@@ -5,6 +5,7 @@
       <th scope="col">Vegetable</th>
       <th scope="col">Growing Season</th>
       <th scope="col">Growing Condition</th>
+      <th scope="col">Garden Type</th>
       <th scope="col">User</th>
       <% if current_user.admin? %>
         <th scope="col"></th>
@@ -18,6 +19,10 @@
       <td><%= link_to veg.name.capitalize, vegetable_path(veg), class: "link show-link"%></td>
       <td><%= veg.season.capitalize %></td>
       <td><%= veg.conditions? ? veg.conditions : "No growing conditions listed" %></td>
+      <td>  
+      <% if veg.garden_types.any? %>
+        <%= render veg.garden_types %>
+      <% end %></td>
       <td><%= veg.user.username if veg.user%></td>
       <% if current_user.admin? %>
        <td><%= link_to "Edit", edit_vegetable_path(veg), class: "link edit-link"%></td> 

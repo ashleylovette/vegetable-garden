@@ -3,6 +3,9 @@
   <p><strong>Name: </strong> <%= @veg.name.capitalize %> </p>
   <p><strong>Growing Season: </strong> <%= @veg.season.capitalize %> </p>
   <p><strong>Growing Conditions: </strong> <%= @veg.conditions? ? @veg.conditions : "No growing conditions listed." %> </p>
+  <% if @veg.garden_types.any? %>
+    <p><em><%= render @veg.garden_types %></em></p>
+  <% end %>
 <% if logged_in? && (@veg.user == current_user || current_user.admin?) %>
   <%= link_to 'Edit', edit_vegetable_path(@veg)%> |
   <%= link_to 'Delete', vegetable_path(@veg), method: :delete, data: {confirm: "Are you sure?"}%> |

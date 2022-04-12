@@ -16,7 +16,6 @@ class VegetablesController < ApplicationController
   end
 
   def create
-    byebug
     @veg = Vegetable.new(vegetable_params)
     @veg.user = current_user
 
