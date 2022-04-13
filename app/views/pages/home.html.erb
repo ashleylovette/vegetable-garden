@@ -2,7 +2,7 @@
 <header>
   <div class="jumbotron text-center">
     <div class="home-text">
-       <h1 class="display-4">Welcome!</h1>
+      <h1 class="display-4">Welcome!</h1>
       <p class="lead">Vegetable Garden allows you to look up and save information about growing conditions of vegetables relative to your agricultural zone.</p>
       <hr class="my-3">
       <p>Sign up now for quick and easy access to your very own vegetable garden notebook.</p>
@@ -13,4 +13,58 @@
   </div>
 </header>
 </div>
-<%# <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="darkgreen" fill-opacity="1" d="M0,128L48,144C96,160,192,192,288,213.3C384,235,480,245,576,224C672,203,768,149,864,117.3C960,85,1056,75,1152,85.3C1248,96,1344,128,1392,144L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg> %>
+<div class="container pt-5">
+  <hr class="mb-5">
+  <div class="row text-center">
+    <div class="icon-group col-lg-4 mt-5">
+    <%= link_to vegetables_path do%>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-apple" width="60" height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="darkgreen" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="14" r="7" />
+        <path d="M12 11v-6a2 2 0 0 1 2 -2h2v1a2 2 0 0 1 -2 2h-2" />
+        <path d="M10 10.5c1.333 .667 2.667 .667 4 0" />
+      </svg>
+      <% end %>
+      <p class="lead p-3">Learn about the vegetables you can grow in your area</p>
+      <hr class="info-line">
+    </div>
+    <div class="icon-group col-lg-4 mt-5">
+      <%= link_to users_path do %>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-seeding" width="60" height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="darkgreen" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M12 10a6 6 0 0 0 -6 -6h-3v2a6 6 0 0 0 6 6h3" />
+          <path d="M12 14a6 6 0 0 1 6 -6h3v1a6 6 0 0 1 -6 6h-3" />
+          <line x1="12" y1="20" x2="12" y2="10" />
+        </svg>
+      <% end %>
+      <p class="lead p-3">Grow your garden with tips from other local gardeners</p>
+      <hr class="info-line">
+    </div>
+    <div class="icon-group col-lg-4 mt-5">
+      <%= link_to signup_path do %>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bulb" width="60" height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="darkgreen" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7" />
+          <path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3" />
+          <line x1="9.7" y1="17" x2="14.3" y2="17" />
+        </svg>
+      <% end %>
+      <p class="lead p-3">Share your knowledge and help make a difference</p>
+      <hr class="info-line">
+    </div>
+  </div>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="lightgray" fill-opacity="0.8" d="M0,128L48,144C96,160,192,192,288,213.3C384,235,480,245,576,224C672,203,768,149,864,117.3C960,85,1056,75,1152,85.3C1248,96,1344,128,1392,144L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+<div class="home-section-2">
+  <%# <div class="container">
+    <div class="card" style="width: 18rem;">
+      <img src="../app/assets/images/pexels-lisa-fotios-4039451.jpg" class="card-img-top" alt="veg-garden">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div> %>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="lightgray" fill-opacity="0.8" d="M0,256L48,261.3C96,267,192,277,288,234.7C384,192,480,96,576,64C672,32,768,64,864,112C960,160,1056,224,1152,208C1248,192,1344,96,1392,48L1440,0L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>

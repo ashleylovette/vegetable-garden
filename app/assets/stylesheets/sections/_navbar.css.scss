@@ -5,25 +5,6 @@
   color: white;
   padding:1rem 0;
 
-
-  .search-bar {
-    position: absolute;
-    right: 0;
-    margin: 1em;
-
-  }
-  .search-btn {
-    margin-left: 0.5rem;
-    color: white;
-    background: darkgreen;
-
-    &:hover {
-      background-color: black;
-      color: white;
-      border: 2px solid darkgreen;
-    }
-  }
-
   .delete-profile:hover {
    color: red;
   }
@@ -47,16 +28,12 @@
     width: auto;
   }
 
-  .nav-link {
-    color: rgb(2, 2, 2);
-
-    // &:hover {
-    //   background-color: rgb(232, 226, 226);
-    // }
-  }
-
   .username {
     text-decoration: none;
     color:rgb(2, 2, 2);
+  }
+
+  .nav-link {
+    color:rgb(2, 2, 2); 
   }
 }
