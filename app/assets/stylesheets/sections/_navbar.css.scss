@@ -1,8 +1,10 @@
 
+
 .navbar {
   background-color: black;
   color: white;
-  padding-top:0.5rem;
+  padding:1rem 0;
+
 
   .search-bar {
     position: absolute;
@@ -24,5 +26,37 @@
 
   .delete-profile:hover {
    color: red;
+  }
+
+  i{
+    color: white;
+  }
+
+  span.user-border {
+    border: 2px solid white;
+    float: right;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+  .user-menu {
+    position: absolute;
+    right: 0;
+    width: auto;
+  }
+
+  .nav-link {
+    color: rgb(2, 2, 2);
+
+    // &:hover {
+    //   background-color: rgb(232, 226, 226);
+    // }
+  }
+
+  .username {
+    text-decoration: none;
+    color:rgb(2, 2, 2);
   }
 }

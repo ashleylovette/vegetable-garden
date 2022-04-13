@@ -9,13 +9,12 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/e988821a66.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
  <%= render 'layouts/navigation'%>
   <%= render 'layouts/messages'%>
-  <div class="container main-body">
   <%= yield %>
-  </div>
   </body>
 </html>

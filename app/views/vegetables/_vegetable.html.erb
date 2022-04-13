@@ -7,7 +7,7 @@
       <th scope="col">Growing Condition</th>
       <th scope="col">Garden Type</th>
       <th scope="col">User</th>
-      <% if current_user.admin? %>
+      <% if logged_in? && current_user.admin? %>
         <th scope="col"></th>
         <th scope="col"></th>
       <% end %>
@@ -24,7 +24,7 @@
         <%= render veg.garden_types %>
       <% end %></td>
       <td><%= veg.user.username if veg.user%></td>
-      <% if current_user.admin? %>
+      <% if logged_in? && current_user.admin? %>
        <td><%= link_to "Edit", edit_vegetable_path(veg), class: "link edit-link"%></td> 
        <td><%= link_to "Delete", vegetable_path(veg), method: :delete, class: "link delete-link"%></td> 
       <% end %> 

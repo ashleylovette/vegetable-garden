@@ -1,69 +1,70 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
-  <div class="container-fluid">
-    <%= link_to "VEG GARDEN", root_path, class: "navbar-brand", id: "logo" %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <%= link_to "Gardeners", users_path, class:"nav-link"%>
-        </li>
-        <li class="nav-item dropdown">
-          <a class= "nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Vegetables
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#"><%= link_to "All Vegetables", vegetables_path, class:"dropdown-item" %></a></li>
-            <li><hr class="dropdown-divider"></li>
-            <% if logged_in? %>
-              <li><a class="dropdown-item" href="#"><%= link_to "Add Vegetable", new_vegetable_path, class:"dropdown-item" %> </a></li>
-            <% end %>
-            <li><a class="dropdown-item" href="#"><%= link_to "Something Else", vegetables_path, class:"dropdown-item" %></a></li> 
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class= "nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Garden Types
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#"><%= link_to "View Garden Types", garden_types_path, class:"dropdown-item" %></a></li>
-            <% if logged_in? && current_user.admin? %>
-            <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#"><%= link_to "Add Garden Type", new_garden_type_path, class:"dropdown-item" %> </a></li>
-            <% end %>
-          </ul>
-        </li>
-        <% if logged_in? %>
+  <div class="container">
+    <div class="col-lg-4">
+      <%= link_to root_path do %>
+        <i class="fas fa-carrot navbar-brand"></i>
+      <% end %>
+    </div>
+    <div class="col-lg-4 text-center">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <%= link_to "Gardeners", users_path, class:"nav-link"%>
+          </li>
           <li class="nav-item dropdown">
             <a class= "nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <%= "(admin)" if current_user.admin? %> 
-              <%= current_user.username %>
+              Vegetables
             </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#"><%= link_to "View Profile", user_path(current_user), class:"dropdown-item" %></a></li>
-            <li><a class="dropdown-item" href="#"><%= link_to "Edit Profile", edit_user_path(current_user), class:"dropdown-item" %> </a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#"><%= link_to "Delete Profile", user_path(current_user), class:"dropdown-item delete-profile", method: :delete, data: { confirm: "Are you sure?"} %></a></li>
-          </ul>
-        </li>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#"><%= link_to "All Vegetables", vegetables_path, class:"dropdown-item" %></a></li>
+              <li><hr class="dropdown-divider"></li>
+              <% if logged_in? %>
+                <li><a class="dropdown-item" href="#"><%= link_to "Add Vegetable", new_vegetable_path, class:"dropdown-item" %> </a></li>
+              <% end %>
+              <li><a class="dropdown-item" href="#"><%= link_to "Something Else", vegetables_path, class:"dropdown-item" %></a></li> 
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class= "nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Garden Types
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#"><%= link_to "View Garden Types", garden_types_path, class:"dropdown-item" %></a></li>
+              <% if logged_in? && current_user.admin? %>
+              <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#"><%= link_to "Add Garden Type", new_garden_type_path, class:"dropdown-item" %> </a></li>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
 
+    <div class="col-lg-4 dropdown" >   
+      <span class="user-border badge rounded-pill dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-user p-1"></i>
+      </span>
+      <ul class="dropdown-menu user-menu rounded shadow" aria-labelledby="dropdownMenuButton">
+        <% if logged_in? %>
+          <li class="dropdown-item">
+            <em class="text-info"><%= "(admin)" if current_user.admin? %></em>
+            <%= link_to current_user.username, user_path(current_user), class: "username"%>
+          <li>
+          <li class="nav-item"><%= link_to "Log Out", logout_path, class:"dropdown-item", method: :delete %></li>            <li><hr class="dropdown-divider"></li>
+            <li><%= link_to "Edit Profile", edit_user_path(current_user), class:"dropdown-item" %> </li>
+            <li><%= link_to "Delete Profile", user_path(current_user), class:"dropdown-item delete-profile", method: :delete, data: { confirm: "Are you sure?"} %></li>
+          <% else %>
           <li class="nav-item">
-            <%= link_to "Log Out", logout_path, class:"nav-link", method: :delete %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Log In", login_path, class:"nav-link"%>
+            <%= link_to "Log In", login_path, class:"nav-link dropdown-item"%>
           </li>
           <li class="nav-item">
-            <%= link_to "Sign Up", signup_path, class:"nav-link"%>
+            <%= link_to "Sign Up", signup_path, class:"nav-link dropdown-item"%>
           </li>
-        <% end %>
-      </ul>
-      <form class="d-flex search-bar">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success search-btn" type="submit">Search</button>
-      </form>
+          <% end %>
+        </ul>
     </div>
   </div>
 </nav>
