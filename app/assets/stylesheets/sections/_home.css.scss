@@ -1,11 +1,20 @@
+.home-container{
+  margin-top: 5rem;
+  background-color: black;
+  height: 25rem;
+}
+ 
 .jumbotron {
   background-image: asset-url('veggies2.jpg');
+  background-color: black;
   height: 32rem;
+  // padding-bottom: 5rem;
+  margin: auto;
+  width:max-content;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  opacity: 0.8;
   font-weight: 500;
 
     h1 {
@@ -29,9 +38,6 @@
 }
 
 .jumbotron .home-text {
-  position: absolute;
-  top: 50;
-  right: 50;
   padding: 2rem;
 }
 
@@ -45,8 +51,13 @@
   cursor: pointer;
 }
 
+.home-section-1 {
+  padding-top: 10rem;
+}
+
 .home-section-2 {
-  background-color: lightgray;
-  opacity: 0.8;
+  background-color: darkgreen;
+  opacity: 0.7;
   height: 25rem;
 }
+

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
 
   <%# FIRST COLUMN %>
@@ -20,6 +20,7 @@
           </li>
           <li class="nav-item p-2">
             <%= link_to "Vegetables", vegetables_path, class: ["nav-link", ("active" if request.path == vegetables_path)]%>
+            <hr class="info-line">
           </li>
           <li class="nav-item p-2">
             <%= link_to "Types of Gardens", garden_types_path, class: ["nav-link", ("active" if request.path == garden_types_path)]%>
