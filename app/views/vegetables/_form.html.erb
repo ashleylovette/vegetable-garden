@@ -1,6 +1,6 @@
 <%= render 'shared/errors', obj: @veg %>
 <div class="container">
-  <%= form_with(model: @veg, url: vegetables_path) do |form| %>
+  <%= form_with(model: @veg) do |form| %>
   <div class="form-group row">
     <%= form.label :name, "Vegetable Name:", class: "p-2" %> 
     <%= form.text_field :name, class: "form-control shadow rounded" %>

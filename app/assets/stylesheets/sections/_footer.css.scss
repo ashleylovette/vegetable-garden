@@ -1,4 +1,5 @@
 .footer {
+  margin-top: 5rem;
   padding-top: 1rem;
   background-color: black;
 }
@@ -35,8 +36,6 @@
 // STYLE SOCIAL MEDIA
 
 .footer-sm {
-
-
   a {
     color: white;
 
@@ -104,4 +103,8 @@
     color: white;
     font-size: 1rem;
   }
+}
+
+.contact-info {
+  margin-left: 6rem;
 }
