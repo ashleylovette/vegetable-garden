@@ -45,6 +45,16 @@ class VegetablesController < ApplicationController
     redirect_to vegetables_path
   end
 
+  def sort_az
+    @veggies = Vegetable.order_az.paginate(page: params[:page], per_page: 5)
+    render 'index'
+  end
+
+  def sort_za
+    @veggies = Vegetable.order_za.paginate(page: params[:page], per_page: 5)
+    render 'index'
+  end
+
   private
 
   def set_vegetable

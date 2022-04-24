@@ -1,0 +1,43 @@
+.fa-sort {
+  color: black;
+}
+
+h1 {
+  margin: 1em;
+}
+
+.delete-link {
+  color: red;
+}
+
+.edit-link {
+  color: darkgreen;
+}
+
+.show-link {
+  font-weight: 600;
+  color: rgb(87, 87, 87);
+}
+
+.link:hover {
+  color: black;
+}
+
+.new-button {
+  color: darkgreen;
+  border: 2px solid darkgreen;
+
+  &:hover {
+    color: darkgreen;
+    transform: translateY(-0.1em);
+  }
+}
+
+.vegetable-name-header {
+  text-decoration: none;
+  color:black;
+
+  &:hover {
+    color:black;
+  }
+}

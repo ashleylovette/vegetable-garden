@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   resources :garden_types, except: [:destroy]
+  get 'sort_az', to: 'vegetables#sort_az'
+  get 'sort_za', to: 'vegetables#sort_za'
 end
