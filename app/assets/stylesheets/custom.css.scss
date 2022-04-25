@@ -7,18 +7,19 @@
 
 
 * {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.main-body {
-  height: 100vh;
+.yield-body {
+  position: relative;
+  margin-top: 7rem;
+
+  .yield-body-header {
+    padding: 1rem;
+    color: darkgray;
+  }
 }
 
 .exit {
   border: 2px solid red;
 }
-
-  .garden-type-title {
-    // border: 2px solid red;
-    margin: 5em;
-  }

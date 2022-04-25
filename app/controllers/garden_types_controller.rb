@@ -20,10 +20,6 @@ class GardenTypesController < ApplicationController
     @garden_types = GardenType.all
   end
 
-  def show
-    @garden_type = GardenType.find(params[:id])
-  end
-
   private
 
   def garden_type_params

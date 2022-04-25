@@ -1,14 +1,16 @@
-<div class="container new-box pb-5">
-  <h1>Showing Vegetable Details</h1>
-  <p><strong>Name: </strong> <%= @veg.name.capitalize %> </p>
-  <p><strong>Growing Season: </strong> <%= @veg.season.capitalize %> </p>
-  <p><strong>Growing Conditions: </strong> <%= @veg.conditions? ? @veg.conditions : "No growing conditions listed." %> </p>
-  <% if @veg.garden_types.any? %>
-    <p><em><%= render @veg.garden_types %></em></p>
+<div class="container-fluid yield-body">
+  <div class="container-fluid new-box pb-5">
+    <h1>Showing Vegetable Details</h1>
+    <p><strong>Name: </strong> <%= @veg.name.capitalize %> </p>
+    <p><strong>Growing Season: </strong> <%= @veg.season.capitalize %> </p>
+    <p><strong>Growing Conditions: </strong> <%= @veg.conditions? ? @veg.conditions : "No growing conditions listed." %> </p>
+    <% if @veg.garden_types.any? %>
+      <p><em><%= render @veg.garden_types %></em></p>
+    <% end %>
+  <% if logged_in? && (@veg.user == current_user || current_user.admin?) %>
+    <%= link_to 'Edit', edit_vegetable_path(@veg)%> |
+    <%= link_to 'Delete', vegetable_path(@veg), method: :delete, data: {confirm: "Are you sure?"}%> |
   <% end %>
-<% if logged_in? && (@veg.user == current_user || current_user.admin?) %>
-  <%= link_to 'Edit', edit_vegetable_path(@veg)%> |
-  <%= link_to 'Delete', vegetable_path(@veg), method: :delete, data: {confirm: "Are you sure?"}%> |
-<% end %>
-<%= link_to 'Return to vegetables page', vegetables_path%>
+  <%= link_to 'Return to vegetables page', vegetables_path%>
+  </div>
 </div>

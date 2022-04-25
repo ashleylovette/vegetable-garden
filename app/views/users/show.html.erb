@@ -1,5 +1,5 @@
-<div class="container-fluid text-center">
-  <h1><%= @user.username%>'s Profile</h1>
+<div class="container-fluid text-center user-profile">
+  <h1 class="yield-body-header"><%= @user.username.capitalize %>'s Garden Profile</h1>
   <%= gravatar_for @user, size: 200 %>
 
   <div class="text-center mb-4 mt-4">

@@ -1,24 +1,149 @@
-<h1>Garden Types</h1>
-
-<div class="container">
-<% @garden_types.each do |type| %>
+<div class="container-fluid yield-body">
+  <h1 class="mt-4 yield-body-header">Vegetable Gardening Types:</h1>
+  <hr>
   <div class="row justify-content-md-center">
-    <div class="col-4 mt-4">
-      <div class="card text-center shadow mb-5 rounded">
-        <div class="card-body">
-          <h5 class="card-title">
-            <%= link_to type.name, garden_type_path(type), class: "text-success" %>
+    <div class="col-8 mt-4">
+        <div class="card text-center shadow mb-5 rounded garden-type-card">
+          <h5 class="card-header">
+              In Ground Gardens
           </h5>
-        </div>
-        <div class="card-footer text-muted">
-          <small>Created <%= time_ago_in_words(type.created_at) %> ago,
-            edited <%= time_ago_in_words(type.created_at) %> ago  </small>
-        </div>
+          <div class="card-body">
+          <%= image_tag "/assets/in_ground.jpg", class: "img-fluid rounded shadow" %>
+
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore maiores excepturi vel velit, cumque nam atque magnam vitae expedita odio corporis natus debitis temporibus ipsam quo reiciendis. Architecto. <br><br>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo eos architecto atque exercitationem officia, cumque iste quam. Tempore nostrum repudiandae reprehenderit consequuntur obcaecati, nulla ab! Debitis quam, tenetur incidunt minima dignissimos natus facere facilis beatae rerum cumque, vel dolor commodi quis at ratione excepturi corporis vitae. Vel cum illo tempore alias molestias totam odio quibusdam unde! Inventore, earum.        
+            </p>
+          </div>
+          <div class="card-footer text-muted">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                Links to resources: 
+                <br>
+                <br>
+                <br>
+                Blogs:
+              </div>
+              <div class="col-md-6">
+                <a href="https://www.homedepot.com/b/Outdoors-Garden-Center/N-5yc1vZbx6k" class="resource-link">The Garden Center- Home Depot</a> <br>
+                <a href="https://www.almanac.com/gardening-methods-overview" class="resource-link">The Farmer's Almanac</a> <br><br>
+                <a href="https://bonnieplants.com/blogs/garden-fundamentals/how-to-plant-an-in-ground-garden-its-easy/" class="resource-link">Bonnie Plants</a> <br>
+                <a href="https://growitbuildit.com/how-to-start-a-vegetable-garden-in-your-backyard/" class="resource-link">Grow it, Build it</a> <br>
+              </div>
+            </div>
+          </div>
+      </div>
+        <div class="card text-center shadow mb-5 rounded garden-type-card">
+          <h5 class="card-header">
+              Raised Bed Garden
+          </h5>
+          <div class="card-body">
+          <%= image_tag "/assets/raised_bed.jpg", class: "img-fluid rounded shadow" %>
+
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore maiores excepturi vel velit, cumque nam atque magnam vitae expedita odio corporis natus debitis temporibus ipsam quo reiciendis. Architecto.<br><br>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo eos architecto atque exercitationem officia, cumque iste quam. Tempore nostrum repudiandae reprehenderit consequuntur obcaecati, nulla ab! Debitis quam, tenetur incidunt minima dignissimos natus facere facilis beatae rerum cumque, vel dolor commodi quis at ratione excepturi corporis vitae. Vel cum illo tempore alias molestias totam odio quibusdam unde! Inventore, earum.        
+            </p>
+          </div>
+          <div class="card-footer text-muted">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                Links to resources: 
+                <br>
+                <br>
+                <br>
+                Blogs:
+              </div>
+              <div class="col-md-6">
+                <a href="https://www.homedepot.com/b/Outdoors-Garden-Center/N-5yc1vZbx6k" class="resource-link">The Garden Center- Home Depot</a> <br>
+                <a href="https://www.almanac.com/gardening-methods-overview" class="resource-link">The Farmer's Almanac</a> <br><br>
+                <a href="https://bonnieplants.com/blogs/garden-fundamentals/how-to-plant-an-in-ground-garden-its-easy/" class="resource-link">Bonnie Plants</a> <br>
+                <a href="https://growitbuildit.com/how-to-start-a-vegetable-garden-in-your-backyard/" class="resource-link">Grow it, Build it</a> <br>
+              </div>
+            </div>
+          </div>
+      </div>
+              <div class="card text-center shadow mb-5 rounded garden-type-card">
+          <h5 class="card-header">
+              Container Gardening
+          </h5>
+          <div class="card-body">
+          <%= image_tag "/assets/container.jpg", class: "img-fluid rounded shadow" %>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore maiores excepturi vel velit, cumque nam atque magnam vitae expedita odio corporis natus debitis temporibus ipsam quo reiciendis. Architecto. <br> <br>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo eos architecto atque exercitationem officia, cumque iste quam. Tempore nostrum repudiandae reprehenderit consequuntur obcaecati, nulla ab! Debitis quam, tenetur incidunt minima dignissimos natus facere facilis beatae rerum cumque, vel dolor commodi quis at ratione excepturi corporis vitae. Vel cum illo tempore alias molestias totam odio quibusdam unde! Inventore, earum.        
+            </p>
+          </div>
+          <div class="card-footer text-muted">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                Links to resources: 
+                <br>
+                <br>
+                <br>
+                Blogs:
+              </div>
+              <div class="col-md-6">
+                <a href="https://www.homedepot.com/b/Outdoors-Garden-Center/N-5yc1vZbx6k" class="resource-link">The Garden Center- Home Depot</a> <br>
+                <a href="https://www.almanac.com/gardening-methods-overview" class="resource-link">The Farmer's Almanac</a> <br><br>
+                <a href="https://bonnieplants.com/blogs/garden-fundamentals/how-to-plant-an-in-ground-garden-its-easy/" class="resource-link">Bonnie Plants</a> <br>
+                <a href="https://growitbuildit.com/how-to-start-a-vegetable-garden-in-your-backyard/" class="resource-link">Grow it, Build it</a> <br>
+              </div>
+            </div>
+          </div>
+      </div>
+        <div class="card text-center shadow mb-5 rounded garden-type-card">
+          <h5 class="card-header">
+              Trellising
+          </h5>
+          <div class="card-body">
+          <%= image_tag "/assets/trellised.jpg", class: "img-fluid shadow rounded" %>
+
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore maiores excepturi vel velit, cumque nam atque magnam vitae expedita odio corporis natus debitis temporibus ipsam quo reiciendis. Architecto. <br> <br>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo eos architecto atque exercitationem officia, cumque iste quam. Tempore nostrum repudiandae reprehenderit consequuntur obcaecati, nulla ab! Debitis quam, tenetur incidunt minima dignissimos natus facere facilis beatae rerum cumque, vel dolor commodi quis at ratione excepturi corporis vitae. Vel cum illo tempore alias molestias totam odio quibusdam unde! Inventore, earum.        
+            </p>
+          </div>
+          <div class="card-footer text-muted">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                Links to resources: 
+                <br>
+                <br>
+                <br>
+                Blogs:
+              </div>
+              <div class="col-md-6">
+                <a href="https://www.homedepot.com/b/Outdoors-Garden-Center/N-5yc1vZbx6k" class="resource-link">The Garden Center- Home Depot</a> <br>
+                <a href="https://www.almanac.com/gardening-methods-overview" class="resource-link">The Farmer's Almanac</a> <br><br>
+                <a href="https://bonnieplants.com/blogs/garden-fundamentals/how-to-plant-an-in-ground-garden-its-easy/" class="resource-link">Bonnie Plants</a> <br>
+                <a href="https://growitbuildit.com/how-to-start-a-vegetable-garden-in-your-backyard/" class="resource-link">Grow it, Build it</a> <br>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
   </div>
-<% end %>
 </div>
+
+
+<%# <% @garden_types.each do |type| %>
+  <%# <div class="row justify-content-md-center"> %>
+    <%# <div class="col-4 mt-4"> %>
+      <%# <div class="card text-center shadow mb-5 rounded"> %>
+        <%# <div class="card-body"> %>
+          <%# <h5 class="card-title"> %>
+            <%# <%= link_to type.name, garden_type_path(type), class: "text-success" %> 
+          <%# </h5> %>
+        <%# </div> %>
+        <%# <div class="card-footer text-muted"> %>
+          <%# <small>Created <%= time_ago_in_words(type.created_at) %>
+            <%# edited <%= time_ago_in_words(type.created_at)   </small>  %>
+        <%# </div> %>
+      <%# </div> %>
+    <%# </div> %>
+  <%# </div> %>
+<%# <% end %>  
 
 
 
