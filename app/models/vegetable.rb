@@ -6,7 +6,7 @@ class Vegetable < ApplicationRecord
     has_many :vegetable_garden_types
     has_many :garden_types, through: :vegetable_garden_types
     
-    default_scope { order(created_at: :desc) }
+    default_scope { order(name: :desc) }
     scope :order_az, -> { reorder(name: :asc) }
     scope :order_za, -> { reorder(name: :desc) }
 end
